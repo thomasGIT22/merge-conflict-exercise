@@ -9,25 +9,31 @@
     <body>
         <h2>SELECT * FROM products;</h2>
         <sql:query dataSource="${db}" var="result">
-            SELECT * FROM products
-            WHERE prod_price < ?;
-            <sql:param value="${param.price}" />
+            SELECT * FROM customers;
         </sql:query>
         <table>
             <tr>
-                <th>prod_id</th>
-                <th>vend_id</th>
-                <th>prod_name</th>
-                <th>prod_price</th>
-                <th>prod_description</th>
+                <th>cust_id</th>
+                <th>cust_name</th>
+                <th>cust_address</th>
+                <th>cust_city</th>
+                <th>cust_state</th>
+                <th>cust_zip</th>
+                <th>cust_country</th>
+                <th>cust_contact</th>
+                <th>cust_email</th>
             </tr>
             <c:forEach var="row" items="${result.rows}">
                 <tr>
-                    <td> <c:out value="${row.prod_id}"/></td>
-                    <td> <c:out value="${row.vend_id}"/></td>
-                    <td> <c:out value="${row.prod_name}"/></td>
-                    <td> <c:out value="${row.prod_price}"/></td>
-                    <td> <c:out value="${row.prod_desc}"/></td>
+                    <td> <c:out value="${row.cust_id}"/></td>
+                    <td> <c:out value="${row.cust_name}"/></td>
+                    <td> <c:out value="${row.cust_address}"/></td>
+                    <td> <c:out value="${row.cust_city}"/></td>
+                    <td> <c:out value="${row.cust_state}"/></td>
+                    <td> <c:out value="${row.cust_zip}"/></td>
+                    <td> <c:out value="${row.cust_country}"/></td>
+                    <td> <c:out value="${row.cust_contact}"/></td>
+                    <td> <c:out value="${row.cust_email}"/></td>
                 </tr>
             </c:forEach>
         </table>
