@@ -1,0 +1,5 @@
+com\stout\ProfileServlet.class
+com\stout\User.class
+com\stout\Contact.class
+com\stout\StoreServlet.class
+com\stout\ListServlet.class
